@@ -13,15 +13,8 @@ import { domain } from "../domain";
 //   };
 // }
 
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: "blocking",
-  };
-}
-
 export async function getStaticProps({ params }: { params: any }) {
-  const data = await fetchMeta(domain + "/doc-bao/" + context.params.slug);
+  const data = await fetchMeta(domain + "/doc-bao/" + params.slug);
   return {
     props: data,
   };
