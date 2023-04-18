@@ -14,7 +14,7 @@ import { domain } from "../domain";
 // }
 
 export async function getStaticProps({ params }: { params: any }) {
-  const data = await fetchMeta(domain + "/doc-bao/" + params.slug);
+  const data = await fetchMeta(domain + "/" + params.slug);
   return {
     props: data,
   };
